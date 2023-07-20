@@ -1,0 +1,78 @@
+body {
+  background-color: #00abdf;
+}
+
+.main {
+    justify-content: center;
+    margin: 4.3% 0% 0% 0%;
+}
+
+.blog {
+  position: relative;
+  background-color: #97daee;
+  border: 5px solid #97daee;
+  border-radius: 5px;
+}
+
+.blogcontent {
+  border-radius: 5px;
+  font-size: 5px;
+}
+
+.blogcontent label {
+  color: #007599;
+  font-size: 6em;
+}
+
+::-webkit-file-upload-button {
+  font-size: 20px;
+  color: #007599 !important;
+}
+
+.title {
+  height: 6vw;
+  resize: none;
+  border: none;
+  font-weight: 600;
+  font-size: 4em;
+}
+
+.content {
+  height: 22.5vw;
+  resize: none;
+  border: none;
+  position: relative;
+}
+
+.btns {
+  color: white;
+  border-radius: 20px;
+  background-color: #028bb4;
+}
+
+.btn-primary {
+    border: none !important;
+}
+
+.btn-primary:not([disabled]):not(.disabled).active,
+.btn-primary:not([disabled]):not(.disabled):active,
+.btn-primary:not([disabled]):not(.disabled).hover,
+.btn-primary:not([disabled]):not(.disabled):hover {
+  color: #fff !important;
+  background-color: #007ca1 !important;
+  border-color: #007ca1 !important;
+}
+
+.draft {
+  margin: 0% 0% 0% 15%;
+}
+
+.save {
+  margin: 0% 0% 0% 43%;
+}
+
+.back {
+  position: absolute;
+  margin: 0% 0% 0% 96%;
+  z-index: 1;
+}
