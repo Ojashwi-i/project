@@ -14,6 +14,6 @@
     </style>
 </head>
 <body>
-  <a href="blog.php" name="add"><img src="/images/Create.png" alt="" width="100px" height="100px"> </a> 
+  <a href="blog.php"><img src="/images/Create.png" alt="" width="100px" height="100px"> </a> 
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php include 'connect.php'  ?>
+<?php include 'connect.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +19,12 @@
   <div class="row p-0 main">
     <div class="col-sm-3 p-0"></div>
     <div class="col-sm-6 p-0 blog">
-      
-      <a href="blogbtn.php" class="btn btn-danger back"><i class="fas fa-xmark"></i></a>
+
+        <a href="blogbtn.php" class="btn btn-danger back"><i class="fas fa-xmark"></i></a>
+
       <div class="row">
-        
-        <form action="upload.php" method="post">
+
+        <form action="blog.php" method="post" enctype="multipart/form-data">
 
           <div class="col-12 mb-2 blogcontent">
             <label for="title">Title:</label>
@@ -32,7 +33,7 @@
 
           <div class="col-12 mb-2 blogcontent">
             <label for="image">Image:</label>
-            <input style="font-size: 20px; color:#007599" type="file" name="image" id="images" class="form-control">
+            <input style="font-size: 20px; color:#007599" type="file" name="image" id="image" class="form-control">
           </div>
 
           <div class="col-12 blogcontent">
@@ -40,11 +41,11 @@
             <textarea type="text" name="content" id="content" class="form-control content"></textarea>
           </div>
 
-            <a href="save.php" class="btn btn-primary btns mt-1 draft" name="draft">Save to Drafts</a>
-            <a href="save.php" class="btn btn-primary btns  mt-1 save" name="save">Save to Blogs</a>
-
+          <button type="submit" class="btn btn-primary btns  mt-1 save" name="save">Save to Blogs</button>
+          <button type="submit" class="btn btn-primary btns mt-1 draft" name="draft">Save to Drafts</button>
         </form>
 
+        <?php include 'upload.php' ?>
       </div>
 
     </div>

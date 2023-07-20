@@ -4,7 +4,7 @@ body {
 
 .main {
     justify-content: center;
-    margin: 4.3% 0% 0% 0%;
+    margin: 3.6% 0% 0% 0%;
 }
 
 .blog {
@@ -48,6 +48,7 @@ body {
   color: white;
   border-radius: 20px;
   background-color: #028bb4;
+  font-size: 15px;
 }
 
 .btn-primary {
@@ -73,6 +74,6 @@ body {
 
 .back {
   position: absolute;
-  margin: 0% 0% 0% 96%;
+  margin: 0% 0% 0% 94.5%;
   z-index: 1;
 }
