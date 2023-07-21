@@ -2,7 +2,7 @@
 
 <?php
 function insertData($conn, $table) {
-  if (!empty($_POST["title"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["content"])) {
+  if(!empty($_POST["title"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["content"])){
     $title = $_POST["title"];
     $image = $_FILES["image"]["name"];
     $tmp_name = $_FILES["image"]["tmp_name"];
@@ -19,18 +19,19 @@ function insertData($conn, $table) {
     } else {
       echo "failed";
     }
-  } else {
+  }else{
     echo "no data";
   }
 }
 
 // Insert data into the "blog" table
-if (isset($_POST["save"])) {
+if (isset($_POST["save"]) && !empty($_POST["title"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["content"])) {
   insertData($conn, "blog");
+  header('location:save.php');
 }
 
 // Insert data into the "draft" table
-if (isset($_POST["draft"])) {
+if (isset($_POST["draft"]) && !empty($_POST["title"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["content"])) {
   insertData($conn, "draft");
   header('location:draft.php');
 }

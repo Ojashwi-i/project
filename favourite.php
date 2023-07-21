@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +11,16 @@
     <link rel="stylesheet" href="draft.css">
     <title>Document</title>
 </head>
-
 <body>
-    <?php
+    
+<?php
 
-    $sql = "SELECT * FROM `draft`";
-    $result = $conn->query($sql);
+if (isset($_GET["id"])) {
+    $user_id = $_GET["id"];
+    // echo $user_id;
+    $sql = "SELECT * FROM `draft` WHERE Id=$user_id";
+    // echo $sql;
+    $result= $conn->query($sql);
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) { ?>
@@ -32,7 +35,7 @@
                         <div class="icons">
                             <i class="fa-regular fa-heart margin"></i>
                             <i class="fa-regular fa-bookmark margin"></i>
-                            <a style="color: black;" href="draft_delete.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-trash margin"></i></a>
+                            <i class="fa-solid fa-trash margin"></i>
                             <i class="fa-solid fa-eye margin"></i>
                         </div>
                     </div>
@@ -47,9 +50,9 @@
     <?php
         }
     }
+}
 
-    ?>
+?>
 
 </body>
-
 </html>

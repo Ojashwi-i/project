@@ -8,6 +8,7 @@ body {
     width: 800px;
     border: 2px solid #C4C4C4;
     border-radius: 5px;
+    margin: 0px 0px 8px 0px;
 }
 
 .imgspace {
@@ -25,11 +26,18 @@ img {
 
 .content1 {
     display: flex;
-    margin:  30px 0px 0px 20px;
+    margin: 30px 0px 0px 20px;
+}
+
+.title {
+    width: 382px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .icons {
-    margin: 0px 0px 0px 104px;
+    margin: 0px 0px 0px 112px;
     font-size: 20px;
 }
 
@@ -38,6 +46,12 @@ img {
 }
 
 .content2 {
-    display: flex; 
-    margin: 0px 0px 0px 20px;  
+    display: flex;
+    margin: 0px 0px 0px 20px;
+}
+
+a:visited,
+a:hover,
+a:active {
+    color: black;
 }
