@@ -16,7 +16,7 @@
 <body>
     <?php
 
-    $sql = "SELECT * FROM `draft`";
+    $sql = "SELECT id, title, content, image, DATE_FORMAT(date, '%b %m') AS month_info FROM draft";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -27,10 +27,10 @@
                     <img src="images/<?php echo $row['image']; ?>" alt="image">
                 </div>
                 <div>
-                    <div class="content1">           
+                    <div class="content1">
                         <h5 class="title"><?php echo $row["title"]; ?></h5>
                         <div class="icons">
-                            <i class="fa-regular fa-heart margin"></i>
+                            <a style="color:black;" href=""><i class="fa-regular fa-heart margin"></i></a>
                             <i class="fa-regular fa-bookmark margin"></i>
                             <a style="color: black;" href="draft_delete.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-trash margin"></i></a>
                             <i class="fa-solid fa-eye margin"></i>
@@ -38,8 +38,8 @@
                     </div>
                     <div class="content2">
                         <div style="color: red;">Draft</div>
-                        <div class="margin">Date</div>
-                        <div style="margin-left: 415px;">Comments</div>
+                        <div class="margin date"><?php echo $row['month_info'] ?></div>
+                        <div class="comments">Comments</div>
                         <div class="margin">0 Views</div>
                     </div>
                 </div>

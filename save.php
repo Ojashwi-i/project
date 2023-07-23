@@ -16,7 +16,7 @@
 <body>
     <?php
 
-    $sql = "SELECT * FROM `blog`";
+    $sql = "SELECT id, title, content, image, DATE_FORMAT(date, '%b %m') AS month_info FROM blog";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -37,8 +37,8 @@
                         </div>
                     </div>
                     <div class="content2">
-                        <div>Date</div>
-                        <div style="margin-left: 467px;">Comments</div>
+                        <div class="date"><?php echo $row['month_info'] ?></div>
+                        <div style="margin-left: 435px;">Comments</div>
                         <div class="margin">0 Views</div>
                     </div>
                 </div>

@@ -50,6 +50,14 @@ img {
     margin: 0px 0px 0px 20px;
 }
 
+.date {
+    width: 65px;
+}
+
+.comments {
+    margin-left: 390px;
+}
+
 a:visited,
 a:hover,
 a:active {
