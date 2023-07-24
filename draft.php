@@ -16,11 +16,14 @@
 <body>
     <?php
 
-    $sql = "SELECT id, title, content, image, DATE_FORMAT(date, '%b %m') AS month_info FROM draft";
+    $sql = "SELECT id, title, content, image,  DATE_FORMAT(date, '%b') AS short_month_name,
+    DAYOFMONTH(date) AS day_of_month FROM draft";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) { ?>
+        while ($row = $result->fetch_assoc()) {
+            $month=$row['short_month_name'];
+            $day=$row['day_of_month']; ?>
 
             <div class="drafts">
                 <div class="imgspace">
@@ -38,7 +41,7 @@
                     </div>
                     <div class="content2">
                         <div style="color: red;">Draft</div>
-                        <div class="margin date"><?php echo $row['month_info'] ?></div>
+                        <div class="margin date"><?php echo $month .' '. $day; ?></div>
                         <div class="comments">Comments</div>
                         <div class="margin">0 Views</div>
                     </div>

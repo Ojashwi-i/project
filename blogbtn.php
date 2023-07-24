@@ -23,19 +23,19 @@
                     <h3>Ashim Pandey</h3><br>
                     <h6>@ashim.pandey99</h6>
                     <div class="info">
-                        <div class="d-flex">
+                        <div class="flex">
                             <h6>Total Blog Views</h6>
-                            <h6 class="user_input">views</h6>
+                            <h6 class="number">number</h6>
                         </div>
-                        <div class="d-flex">
+                        <div class="flex">
                         <h6>Total Comments</h6>
-                        <h6>number</h6>
+                        <h6 class="number">number</h6>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-9 m-0 p-0">
-                <a href="blog.php"><img src="/images/Create.png" alt="" width="100px" height="100px"> </a>
+                <a href="blog.php"><img src="/images/Create.png" alt="" width="100px" height="100px"></a>
             </div>
         </div>
     </div>
