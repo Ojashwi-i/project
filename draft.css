@@ -1,26 +1,25 @@
-body {
-    margin: 20px;
+.draft_save_container {
+    height: 620px;
+    overflow-y: scroll;
+    margin: 20px 0px 0px 0px;
 }
 
 .drafts {
     display: flex;
-    height: 130px;
-    width: 800px;
+    height: 100px;
+    width: 100%;
     border: 2px solid #C4C4C4;
     border-radius: 5px;
     margin: 0px 0px 8px 0px;
 }
 
 .imgspace {
-    height: 110px;
-    width: 110px;
-    border-radius: 5px;
     margin: 8px 0px 0px 8px;
 }
 
 img {
-    height: 110px;
-    width: 110px;
+    height: 80px;
+    width: 80px;
     border-radius: 5px;
 }
 
@@ -37,7 +36,7 @@ img {
 }
 
 .icons {
-    margin: 0px 0px 0px 112px;
+    margin: 0px 0px 0px 265px;
     font-size: 20px;
 }
 
@@ -55,7 +54,11 @@ img {
 }
 
 .comments {
-    margin-left: 390px;
+    margin-left: 518px;
+}
+
+.save_comments {
+    margin-left: 568px;
 }
 
 a:visited,

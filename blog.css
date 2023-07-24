@@ -1,17 +1,18 @@
-body {
-  background-color: #00abdf;
+body{
+  background-color: #F6F4EB;
 }
 
 .main {
     justify-content: center;
-    margin: 3.6% 0% 0% 0%;
+    margin: 3% 0% 0% 0%;
 }
 
 .blog {
   position: relative;
-  background-color: #97daee;
-  border: 5px solid #97daee;
+  background-color: #4682A9;
+  border: 4px solid #346383;
   border-radius: 5px;
+  padding: 5px;
 }
 
 .blogcontent {
@@ -20,13 +21,13 @@ body {
 }
 
 .blogcontent label {
-  color: #007599;
+  color: #F6F4EB;
   font-size: 6em;
 }
 
 ::-webkit-file-upload-button {
   font-size: 20px;
-  color: #007599 !important;
+  color: #4682A9 !important;
 }
 
 .title {
@@ -42,38 +43,34 @@ body {
   resize: none;
   border: none;
   position: relative;
+  font-size: 4em;
 }
 
 .btns {
-  color: white;
+  color: #4682A9;
   border-radius: 20px;
-  background-color: #028bb4;
+  background-color: #F6F4EB;
   font-size: 15px;
+  font-weight: bold;
 }
 
 .btn-primary {
-    border: none !important;
+    border: 3px solid #346383; !important;
 }
 
-.btn-primary:not([disabled]):not(.disabled).active,
-.btn-primary:not([disabled]):not(.disabled):active,
 .btn-primary:not([disabled]):not(.disabled).hover,
 .btn-primary:not([disabled]):not(.disabled):hover {
-  color: #fff !important;
-  background-color: #007ca1 !important;
-  border-color: #007ca1 !important;
-}
-
-.draft {
-  margin: 0% 0% 0% 15%;
-}
-
-.save {
-  margin: 0% 0% 0% 43%;
+  color: #4682A9 !important;
+  background-color: #F6F4EB !important;
+  border:3px solid #346383 !important;
 }
 
 .back {
   position: absolute;
-  margin: 0% 0% 0% 94.5%;
+  margin: 0% 0% 0% 93%;
   z-index: 1;
+}
+
+.draft{
+  margin: 0% 0% 0% 62.5%;
 }

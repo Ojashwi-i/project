@@ -28,12 +28,16 @@ function insertData($conn, $table) {
 if (isset($_POST["save"]) && !empty($_POST["title"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["content"])) {
   insertData($conn, "blog");
   header('location:save.php');
+}else{
+  echo "no data";
 }
 
 // Insert data into the "draft" table
 if (isset($_POST["draft"]) && !empty($_POST["title"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["content"])) {
   insertData($conn, "draft");
   header('location:draft.php');
+}else{
+  echo "no data";
 }
 ?>
 

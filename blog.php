@@ -18,7 +18,7 @@
 
   <div class="row p-0 main">
     <div class="col-sm-3 p-0"></div>
-    <div class="col-sm-6 p-0 blog">
+    <div class="col-sm-6 blog">
 
         <a href="blogbtn.php" class="btn btn-danger back"><i class="fas fa-xmark"></i></a>
 
@@ -33,7 +33,7 @@
 
           <div class="col-12 mb-2 blogcontent">
             <label for="image">Image:</label>
-            <input style="font-size: 20px; color:#007599" type="file" name="image" id="image" class="form-control">
+            <input style="font-size: 20px; color:#4682A9" type="file" name="image" id="image" class="form-control">
           </div>
 
           <div class="col-12 blogcontent">
@@ -41,8 +41,8 @@
             <textarea type="text" name="content" id="content" class="form-control content"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btns  mt-1 save" name="save">Save to Blogs</button>
-          <button type="submit" class="btn btn-primary btns mt-1 draft" name="draft">Save to Drafts</button>
+          <button type="submit" class="btn btn-primary btns mt-2 draft" name="draft">Save to Drafts</button>
+          <button type="submit" class="btn btn-primary btns  mt-2" name="save">Save to Blogs</button>
         </form>
 
         <?php include 'upload.php' ?>
