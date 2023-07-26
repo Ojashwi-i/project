@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/03afbd77fe.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="draft.css">
     <link rel="stylesheet" href="blogbtn.css">
     <title>Document</title>
@@ -64,10 +65,10 @@
                 </ul>
 
                 <div class="draft_save_container">
-                    <?php
 
+                    <?php
                     $sql = "SELECT id, title, content, image,  DATE_FORMAT(date, '%b') AS short_month_name,
-                DAYOFMONTH(date) AS day_of_month FROM draft";
+                    DAYOFMONTH(date) AS day_of_month FROM draft";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -85,7 +86,7 @@
                                         <div class="content1">
                                             <h5 class="title"><?php echo $row["title"]; ?></h5>
                                             <div class="icons">
-                                                <a style="color:black;" href=""><i class="fa-regular fa-heart margin"></i></a>
+                                                <a style="color:black;" href="#" class="heart-icon" id="<?php echo $id ?>"><i class="fa-regular fa-heart margin"></i></a>
                                                 <i class="fa-regular fa-bookmark margin"></i>
                                                 <a style="color: black;" href="draft_delete.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-trash margin"></i></a>
                                                 <i class="fa-solid fa-eye margin"></i>

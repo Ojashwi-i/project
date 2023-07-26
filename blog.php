@@ -20,29 +20,29 @@
     <div class="col-sm-3 p-0"></div>
     <div class="col-sm-6 blog">
 
-        <a href="blogbtn.php" class="btn btn-danger back"><i class="fas fa-xmark"></i></a>
+      <a href="blogbtn.php" class="back"><i class="fas fa-xmark"></i></a>
 
       <div class="row">
 
         <form action="blog.php" method="post" enctype="multipart/form-data">
 
           <div class="col-12 mb-2 blogcontent">
-            <label for="title">Title:</label>
-            <textarea type="text" name="title" id="title" class="form-control title"></textarea>
+            <!-- <label for="title">Title:</label> -->
+            <textarea type="text" name="title" id="title" placeholder="Title..." class="form-control title"></textarea>
           </div>
 
           <div class="col-12 mb-2 blogcontent">
-            <label for="image">Image:</label>
-            <input style="font-size: 20px; color:#4682A9" type="file" name="image" id="image" class="form-control">
+            <!-- <label for="image">Image:</label> -->
+            <input style="font-size: 20px;" type="file" name="image" id="image" class="form-control">
           </div>
 
           <div class="col-12 blogcontent">
-            <label for="content">Content:</label>
-            <textarea type="text" name="content" id="content" class="form-control content"></textarea>
+            <!-- <label for="content">Content:</label> -->
+            <textarea type="text" name="content" id="content" placeholder="Content..." class="form-control content"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btns mt-2 draft" name="draft">Save to Drafts</button>
-          <button type="submit" class="btn btn-primary btns  mt-2" name="save">Save to Blogs</button>
+          <button type="submit" class="btn btn-primary btns mt-4 draft" name="draft">Save to Drafts</button>
+          <button type="submit" class="btn btn-primary btns  mt-4" name="save">Save to Blogs</button>
         </form>
 
         <?php include 'upload.php' ?>
