@@ -18,13 +18,13 @@
 
   <div class="row p-0 main">
     <div class="col-sm-3 p-0"></div>
-    <div class="col-sm-6 blog">
+    <div class="col-sm-6">
 
       <a href="blogbtn.php" class="back"><i class="fas fa-xmark"></i></a>
 
       <div class="row">
 
-        <form action="blog.php" method="post" enctype="multipart/form-data">
+        <form action="blog.php" class="blog" method="post" enctype="multipart/form-data">
 
           <div class="col-12 mb-2 blogcontent">
             <!-- <label for="title">Title:</label> -->
@@ -41,8 +41,22 @@
             <textarea type="text" name="content" id="content" placeholder="Content..." class="form-control content"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btns mt-4 draft" name="draft">Save to Drafts</button>
+          <div class="col-12 blogcontent">
+          <label for="catergories">Catergory</label>
+          <select class="form-select" name="categories" id="categories">
+            <option value="">Adventure</option>
+            <option value="">Sightseeing</option>
+            <option value="">News</option>
+            <option value="">Trekking</option>
+            <option value="">Historical</option>
+            <option value="">Health and fitness</option>
+            <option value="">Fashion</option>
+            <option value="">Photography</option>
+          </select>
           <button type="submit" class="btn btn-primary btns  mt-4" name="save">Save to Blogs</button>
+          <button type="submit" class="btn btn-primary btns mt-4 draft" name="draft">Save to Drafts</button>
+          </div>
+
         </form>
 
         <?php include 'upload.php' ?>

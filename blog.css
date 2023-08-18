@@ -20,8 +20,8 @@ body {
 }
 
 .blogcontent label {
-  color: #F6F4EB;
-  font-size: 6em;
+  color: #000000;
+  font-size: 4em;
 }
 
 /* ::-webkit-file-upload-button {
@@ -53,6 +53,7 @@ body {
   background-color: #F6F4EB;
   font-size: 15px;
   font-weight: bold;
+  float: right;
 }
 
 .btn-primary {
@@ -67,12 +68,22 @@ body {
 
 .back {
   position: absolute;
-  margin: -6% 0% 0% 88%;
+  margin: 0px 0px 0px 680px;
   z-index: 1;
   font-size: 23px;
   color: black;
 }
 
 .draft {
-  margin: 0% 0% 0% 55%;
+  margin: 0px 5px 0px 0px;
+}
+
+.form-select {
+  position: absolute;
+  width: 200px;
+  overflow: scroll;
+}
+
+.option {
+  height: 10px;
 }
