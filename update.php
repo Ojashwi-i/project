@@ -1,18 +1,21 @@
 <?php include 'connect.php' ?>
 
 <?php
-$title=$content=$image=" ";
+$title = $content = $image = " ";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $sql = "SELECT * FROM `draft` WHERE 'id' = '$id'";
+    $sql = "SELECT * FROM draft WHERE id = $id";
     $result = $conn->query($sql);
     if ($result) {
         $row = $result->fetch_assoc();
-      
+        $title=$row['title'];
+        $content=$row['content'];
+        $image=$row['image'];
     } else {
         echo "failed";
     }
 }
+
 
 ?>
 
@@ -36,15 +39,16 @@ if (isset($_GET['id'])) {
         <div class="col-sm-3 p-0"></div>
         <div class="col-sm-6">
 
-            <a href="blogbtn.php" class="back"><i class="fas fa-xmark"></i></a>
+            <a href="draft.php" class="back"><i class="fas fa-xmark"></i></a>
 
             <div class="row">
 
-                <form action="blog.php" class="blog" method="post" enctype="multipart/form-data">
+                <form action="update.php?id_new=<?php echo $id; ?>" class="blog" method="post" enctype="multipart/form-data">
 
                     <div class="col-12 mb-2 blogcontent">
                         <!-- <label for="title">Title:</label> -->
-                        <textarea type="text" name="title" id="title" placeholder="Title..." class="form-control title"></textarea>
+                        <php echo $vtitle; ?>
+                        <textarea type="text" name="title" id="title" placeholder="Title..." class="form-control title"><?php echo $title; ?></textarea>
                     </div>
 
                     <div class="col-12 mb-2 blogcontent">
@@ -54,7 +58,7 @@ if (isset($_GET['id'])) {
 
                     <div class="col-12 blogcontent">
                         <!-- <label for="content">Content:</label> -->
-                        <textarea type="text" name="content" id="content" placeholder="Content..." class="form-control content"></textarea>
+                        <textarea type="text" name="content" id="content" placeholder="Content..." class="form-control content"><?php echo $content; ?></textarea>
                     </div>
 
                     <div class="col-12 blogcontent">
@@ -75,7 +79,7 @@ if (isset($_GET['id'])) {
 
                 </form>
 
-              
+
             </div>
 
         </div>
