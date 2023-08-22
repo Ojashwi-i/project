@@ -8,14 +8,58 @@ if (isset($_GET['id'])) {
     $result = $conn->query($sql);
     if ($result) {
         $row = $result->fetch_assoc();
-        $title=$row['title'];
-        $content=$row['content'];
-        $image=$row['image'];
+        $title = $row['title'];
+        $content = $row['content'];
+        $image = $row['image'];
+        } else {
+            echo "failed";
+        }
+    }
+
+
+if (isset($_POST["save"]) && !empty($_POST["title"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["content"])) {
+    $id=$_GET['id_new'];
+    $title = $_POST["title"];
+    $image = $_FILES["image"]["name"];
+    $tmp_name = $_FILES["image"]["tmp_name"];
+    $destination = "images/" . $image;
+    move_uploaded_file($tmp_name, $destination);
+    $content = $_POST["content"];
+
+    $sql = "INSERT INTO `blog` (`title`, `content`, `image`) VALUES ('$title','$content','$image')";
+    $delete = "DELETE FROM `draft` WHERE id = $id";
+    $query = $conn->query($sql);
+    $query2 = $conn->query($delete);
+
+    if ($query) {
+        header('location:save.php');
+    } else {
+        echo "failed";
+    }
+
+    if ($query2) {
     } else {
         echo "failed";
     }
 }
 
+if(isset($_POST['draft']) && !empty($_POST["title"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["content"])){
+    $id=$_GET['id_new'];
+    $title = $_POST["title"];
+    $image = $_FILES["image"]["name"];
+    $tmp_name = $_FILES["image"]["tmp_name"];
+    $destination = "images/" . $image;
+    move_uploaded_file($tmp_name, $destination);
+    $content = $_POST["content"];
+
+    $sql="UPDATE `draft` SET `title`='$title',`content`='$content',`image`='$image' WHERE id = $id";
+    $query= $conn->query($sql);
+    if ($query){
+        header('location:draft.php');
+    }else{
+        echo "failed";
+    }
+}
 
 ?>
 
@@ -48,7 +92,7 @@ if (isset($_GET['id'])) {
                     <div class="col-12 mb-2 blogcontent">
                         <!-- <label for="title">Title:</label> -->
                         <php echo $vtitle; ?>
-                        <textarea type="text" name="title" id="title" placeholder="Title..." class="form-control title"><?php echo $title; ?></textarea>
+                            <textarea type="text" name="title" id="title" placeholder="Title..." class="form-control title"><?php echo $title; ?></textarea>
                     </div>
 
                     <div class="col-12 mb-2 blogcontent">
