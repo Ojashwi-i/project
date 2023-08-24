@@ -83,7 +83,7 @@
                                     <div class="content1">
                                         <h5 class="title"><?php echo $row["title"]; ?></h5>
                                         <div class="icons">
-                                            <i class="fa-regular fa-heart margin"></i>
+                                            <a style="color: black;" href="" class="favourite-btn" ><i class="fa-regular fa-heart margin"></i></a>
                                             <i class="fa-regular fa-bookmark margin"></i>
                                             <a style="color: black;" href="blog_delete.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-trash margin"></i></a>
                                             <i class="fa-solid fa-eye margin"></i>
