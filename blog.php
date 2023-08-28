@@ -16,8 +16,37 @@
 
 <body>
 
-  <div class="row p-0 main">
-    <div class="col-sm-3 p-0"></div>
+  <div class="row p-0 m-0 main">
+    <div class="col-sm-3 p-0">
+      <div class="row m-0 p-0">
+    <div class="col-12 m-0 p-0 profile_container">
+                <div class="profile">
+                    <div class="profile_pic"></div>
+                    <h3>Ashim Pandey</h3><br>
+                    <h6 class="main_name">@ashim.pandey99</h6>
+                    <div class="info">
+                        <div class="d-flex">
+                            <h6>Total Blog Views</h6>
+                            <h6 style="margin: 0px 0px 0px 58px;" class="number">5523</h6>
+                        </div>
+                        <div class="d-flex">
+                            <h6>Total Comments</h6>
+                            <h6 style="margin: 0px 0px 0px 58px;" class="number">621</h6>
+                        </div>
+                        <div class="d-flex">
+                            <p>Member Since:</p>
+                            <p style="margin: 3px 0px 0px 3px;" class="date">01 Jan 2022</p>
+                        </div>
+
+                    </div>
+                    <div class="btns">
+                        <button class="btn1">Edit profile</button> <br>
+                        <button class="btn2">Change Password</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
     <div class="col-sm-6">
 
       <a href="blogbtn.php" class="back"><i class="fas fa-xmark"></i></a>
@@ -63,7 +92,7 @@
       </div>
 
     </div>
-    <div class="col-sm-3 p-0"></div>
+    <div class="col-sm-3 m-0 p-0"></div>
   </div>
 
 </body>
