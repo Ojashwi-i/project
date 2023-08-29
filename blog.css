@@ -3,14 +3,13 @@ body {
 }
 
 .main {
-  justify-content: center;
-  /* margin: 3% 0% 0% 0%; */
+ margin: 0px 10px;
 }
 
 .blog {
   position: relative;
   background-color: #ffffff;
-  padding: 50px 50px 25px;
+  /* padding: 50px 50px 25px; */
   /* box-shadow: 1px 1px 10px 8px #01789c; */
 }
 
@@ -68,7 +67,7 @@ body {
 
 .back {
   position: absolute;
-  margin: 0px 0px 0px 680px;
+  margin: 0px 0px 0px 650px;
   z-index: 1;
   font-size: 23px;
   color: black;
@@ -108,13 +107,47 @@ body {
   border-radius: 50px;
 }
 
+.profile h3 {
+  margin: 12px 0px 0px 0px;
+  text-align: center;
+  letter-spacing: -1px;
+  font-weight: 650;
+}
+
+.main_name {
+  margin: -20px 0px 0px 0px;
+  text-align: center;
+}
+
+.info {
+  margin: 20px 0px 0px 0px;
+  padding: 6px 5px 6px;
+  border-radius: 8px;
+  border: 2px solid #c1c1c1;
+}
+
+.info h6 {
+  margin: 0px 0px 8px 0px;
+}
+
 .number {
   width: 100px;
   text-align: right;
 }
 
+.info p {
+  color: #797979;
+  font-size: 14px;
+  margin: 3px 0px 0px;
+}
+
 .date {
   width: 85px;
+}
+
+.profile-btns {
+  text-align: center;
+  margin: 30px 0px;
 }
 
 .btn1 {
