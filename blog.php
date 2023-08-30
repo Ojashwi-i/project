@@ -52,45 +52,30 @@
 
       <a href="blogbtn.php" class="back"><i class="fas fa-xmark"></i></a>
 
-      <div class="row m-0 p-0">
+      <?php
 
-        <form action="blog.php" class="blog" method="post" enctype="multipart/form-data">
+      $sql = "SELECT id, title, content, image,  DATE_FORMAT(date, '%b') AS short_month_name,
+    DAYOFMONTH(date) AS day_of_month FROM blog";
+      $result = $conn->query($sql);
 
-          <div class="col-12 mb-2 blogcontent">
-            <!-- <label for="title">Title:</label> -->
-            <textarea type="text" name="title" id="title" placeholder="Title..." class="form-control title"></textarea>
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          $month = $row['short_month_name'];
+          $day = $row['day_of_month']; ?>
+
+          <div class="post">
+            <div>
+              <img class="image" src="images/<?php echo $row['image']; ?>" alt="">
+            </div> <br>
+            <div class="title-space">
+                <h5><?php echo $row['title']; ?></h5>
+            </div>
           </div>
 
-          <div class="col-12 mb-2 blogcontent">
-            <!-- <label for="image">Image:</label> -->
-            <input style="font-size: 20px;" type="file" name="image" id="image" class="form-control">
-          </div>
-
-          <div class="col-12 blogcontent">
-            <!-- <label for="content">Content:</label> -->
-            <textarea type="text" name="content" id="content" placeholder="Content..." class="form-control content"></textarea>
-          </div>
-
-          <div class="col-12 blogcontent">
-            <label for="catergories">Catergory</label>
-            <select class="form-select" name="categories" id="categories">
-              <option value="">Adventure</option>
-              <option value="">Sightseeing</option>
-              <option value="">News</option>
-              <option value="">Trekking</option>
-              <option value="">Historical</option>
-              <option value="">Health and fitness</option>
-              <option value="">Fashion</option>
-              <option value="">Photography</option>
-            </select>
-            <button type="submit" class="btn btn-primary btns  mt-4" name="save">Save to Blogs</button>
-            <button type="submit" class="btn btn-primary btns mt-4 draft" name="draft">Save to Drafts</button>
-          </div>
-
-        </form>
-
-        <?php //include 'upload.php' ?>
-      </div>
+      <?php
+        }
+      }
+      ?>
 
     </div>
     <div class="col-sm-3">
@@ -104,7 +89,7 @@
           <div class="modal-content">
 
             <div class="modal-header">
-              <h4 class="modal-title">Modal Heading</h4>
+              <h4 class="modal-title">Create a Blog</h4>
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -114,44 +99,43 @@
               <div class="modal-body">
                 <div class="row m-0 p-0">
 
-                    <div class="col-12 mb-2 blogcontent">
-                      <!-- <label for="title">Title:</label> -->
-                      <textarea type="text" name="title" id="title" placeholder="Title..." class="form-control title"></textarea>
-                    </div>
-
-                    <div class="col-12 mb-2 blogcontent">
-                      <!-- <label for="image">Image:</label> -->
-                      <input style="font-size: 20px;" type="file" name="image" id="image" class="form-control">
-                    </div>
-
-                    <div class="col-12 blogcontent">
-                      <!-- <label for="content">Content:</label> -->
-                      <textarea type="text" name="content" id="content" placeholder="Content..." class="form-control content"></textarea>
-                    </div>
-
-                    <!-- <div class="col-12 blogcontent">
-                      <label for="catergories">Catergory</label>
-                      <select class="form-select" name="categories" id="categories">
-                        <option value="">Adventure</option>
-                        <option value="">Sightseeing</option>
-                        <option value="">News</option>
-                        <option value="">Trekking</option>
-                        <option value="">Historical</option>
-                        <option value="">Health and fitness</option>
-                        <option value="">Fashion</option>
-                        <option value="">Photography</option>
-                      </select>
-                    </div> -->
-
+                  <div class="col-12 mb-2 blogcontent">
+                    <!-- <label for="title">Title:</label> -->
+                    <textarea type="text" name="title" id="title" placeholder="Title..." class="form-control title"></textarea>
                   </div>
+
+                  <div class="col-12 mb-2 blogcontent">
+                    <!-- <label for="image">Image:</label> -->
+                    <input style="font-size: 20px;" type="file" name="image" id="image" class="form-control">
+                  </div>
+
+                  <div class="col-12 blogcontent">
+                    <!-- <label for="content">Content:</label> -->
+                    <textarea type="text" name="content" id="content" placeholder="Content..." class="form-control content"></textarea>
+                  </div>
+
+
                 </div>
-                
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary btns  mt-4" name="save">Save to Blogs</button>
-                  <button type="submit" class="btn btn-primary btns mt-4 draft" name="draft">Save to Drafts</button>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer mx-4">
+                <div class="col-12 blogcontent">
+                  <select class="form-select" name="categories" id="categories">
+                    <option value="">Adventure</option>
+                    <option value="">Sightseeing</option>
+                    <option value="">News</option>
+                    <option value="">Trekking</option>
+                    <option value="">Historical</option>
+                    <option value="">Health and fitness</option>
+                    <option value="">Fashion</option>
+                    <option value="">Photography</option>
+                  </select>
                 </div>
-                <?php include 'upload.php' ?>
+                <button type="submit" class="btn btn-primary btns" name="save">Save to Blogs</button>
+                <button type="submit" class="btn btn-primary btns draft" name="draft">Save to Drafts</button>
+              </div>
+              <?php include 'upload.php' ?>
             </form>
 
           </div>
